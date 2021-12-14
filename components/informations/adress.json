@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_informations_adresses",
+  "info": {
+    "name": "adress",
+    "icon": "city",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "road": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "postcode": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    }
+  }
+}

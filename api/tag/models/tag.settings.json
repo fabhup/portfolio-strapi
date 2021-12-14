@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "name": "tag",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "projects": {
+      "via": "tags",
+      "collection": "project"
+    },
+    "tag_category": {
+      "model": "tag-category",
+      "via": "tags"
+    }
+  }
+}

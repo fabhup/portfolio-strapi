@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_informations_languages",
+  "info": {
+    "name": "Language",
+    "icon": "comment-dots"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string"
+    }
+  }
+}

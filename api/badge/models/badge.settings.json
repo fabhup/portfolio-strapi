@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "badges",
+  "info": {
+    "name": "badge",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "label": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "icon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "color": {
+      "type": "colorpicker",
+      "columnType": "longtext"
+    },
+    "projects": {
+      "via": "badges",
+      "collection": "project"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "name": "project",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "medias": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "github_url": {
+      "type": "string"
+    },
+    "project_url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "badges": {
+      "collection": "badge",
+      "via": "projects",
+      "dominant": true
+    },
+    "tags": {
+      "via": "projects",
+      "collection": "tag",
+      "dominant": true
+    },
+    "slug": {
+      "type": "string"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "profile": {
+      "model": "profile",
+      "via": "projects"
+    }
+  }
+}

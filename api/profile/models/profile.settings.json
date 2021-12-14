@@ -1,0 +1,106 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profiles",
+  "info": {
+    "name": "profile",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "picture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "posts": {
+      "via": "profile",
+      "collection": "post"
+    },
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "adress": {
+      "type": "component",
+      "repeatable": false,
+      "component": "informations.adress"
+    },
+    "jobtitle": {
+      "type": "string"
+    },
+    "links": {
+      "type": "enumeration",
+      "enum": [
+        "github",
+        "linkedin",
+        "portfolio"
+      ]
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "children": {
+      "type": "integer"
+    },
+    "github": {
+      "type": "component",
+      "repeatable": false,
+      "component": "informations.link"
+    },
+    "linkedin": {
+      "type": "component",
+      "repeatable": false,
+      "component": "informations.link"
+    },
+    "portfolio": {
+      "type": "component",
+      "repeatable": false,
+      "component": "informations.link"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "language1": {
+      "type": "component",
+      "repeatable": false,
+      "component": "informations.language"
+    },
+    "language2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "informations.language"
+    },
+    "hobbies": {
+      "collection": "hobbie",
+      "via": "profiles",
+      "dominant": true
+    },
+    "projects": {
+      "via": "profile",
+      "collection": "project"
+    }
+  }
+}
